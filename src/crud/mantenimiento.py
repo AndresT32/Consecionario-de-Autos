@@ -11,10 +11,9 @@ def obtener_mantenimiento(mantenimiento_id: str) -> dict:
 
 
 def crear_mantenimiento(
-    fecha: date, tipo_servicio: str, costo: float, auto_id: str, id_empleado: str
+     tipo_servicio: str, costo: float, auto_id: str, id_empleado: str
 ) -> dict:
     payload = {
-        "fecha": fecha.isoformat(),
         "tipo_servicio": tipo_servicio,
         "costo": costo,
         "auto_id": auto_id,
@@ -25,15 +24,12 @@ def crear_mantenimiento(
 
 def actualizar_mantenimiento(
     mantenimiento_id: str,
-    fecha: date | None = None,
     tipo_servicio: str | None = None,
     costo: float | None = None,
     auto_id: str | None = None,
     id_empleado: str | None = None,
 ) -> dict:
     payload = {}
-    if fecha is not None:
-        payload["fecha"] = fecha.isoformat()
     if tipo_servicio is not None:
         payload["tipo_servicio"] = tipo_servicio
     if costo is not None:

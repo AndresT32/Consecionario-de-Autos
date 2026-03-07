@@ -1,4 +1,4 @@
-from src.entities.usuario import Usuario
+from src.entities.Usuario import Usuario
 from src.entities.autos import Auto
 from src.entities.clientes import Cliente
 from src.entities.compra import Compra

@@ -11,14 +11,12 @@ def obtener_venta(venta_id: str) -> dict:
 
 
 def crear_venta(
-    fecha: date,
     precio_venta: float,
     metodo_pago: str,
     cliente_id: str,
     empleado_id: str,
 ) -> dict:
     payload = {
-        "fecha": fecha.isoformat(),
         "precio_venta": precio_venta,
         "metodo_pago": metodo_pago,
         "cliente_id": cliente_id,
@@ -29,15 +27,12 @@ def crear_venta(
 
 def actualizar_venta(
     venta_id: str,
-    fecha: date | None = None,
     precio_venta: float | None = None,
     metodo_pago: str | None = None,
     cliente_id: str | None = None,
     empleado_id: str | None = None,
 ) -> dict:
     payload = {}
-    if fecha is not None:
-        payload["fecha"] = fecha.isoformat()
     if precio_venta is not None:
         payload["precio_venta"] = precio_venta
     if metodo_pago is not None:
