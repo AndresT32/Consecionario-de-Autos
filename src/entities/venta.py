@@ -12,12 +12,11 @@ class Venta(Base):
     __tablename__ = "tbl_Venta"
 
     id_Venta = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
-    Fecha = Column(DateTime,nullable=False)
+    fecha = Column(DateTime(timezone=True), server_default=func.now())
     Precio_Venta = Column(Numeric(10,2), nullable=False)
     Metodo_Pago = Column(String(100), nullable=False)
 
 
-    fecha_creacion = Column(DateTime(timezone=True), server_default=func.now())
     fecha_edicion = Column(DateTime(timezone=True), onupdate=func.now())
 
     id_usuario_crea = Column(
