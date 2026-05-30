@@ -2,7 +2,7 @@ import logging
 
 from sqlalchemy.orm import Session
 from src.database.config import SessionLocal
-from src.entities.usuario import Usuario
+from src.entities.Usuario import Usuario
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
